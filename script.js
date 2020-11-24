@@ -1,30 +1,18 @@
-window.onload = function () {
+function myKeyPress(e) {
+  
+  /* TODO1: retrieve the value from the text input */
+  var inputNum = document.getElementById("textinput").value;
+  var mytextbox = "my textbox element";
+  var count = 0; // for 3
+  var keyPressed;
+  
+  if (window.event) {
+    // IE
+    keyPressed = e.keyCode;
+  } else if (e.which) {
+    // Netscape/Firefox/Opera
+    keyPressed = e.which;
+  }
 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "light2",
-	title:{
-		text: "Simple Line Chart"
-	},
-	data: [{        
-		type: "line",
-      	indexLabelFontSize: 16,
-		dataPoints: [
-			{ y: 450 },
-			{ y: 414},
-			{ y: 520, indexLabel: "\u2191 highest",markerColor: "red", markerType: "triangle" },
-			{ y: 460 },
-			{ y: 450 },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 480 },
-			{ y: 410 , indexLabel: "\u2193 lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
-			{ y: 500 },
-			{ y: 480 },
-			{ y: 510 }
-		]
-	}]
-});
-chart.render();
 
 }

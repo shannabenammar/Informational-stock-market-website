@@ -1,3 +1,3 @@
-# Get Started!
+# Informational-stock-market-website
 
-Add files and start typing 🎉
+## IN PROGRESS

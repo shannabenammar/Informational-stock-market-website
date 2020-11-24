@@ -1,0 +1,129 @@
+html{
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+header{
+    font-size: 20px;
+    font-family: Helvetica;
+    border-bottom:2px solid  #509de6;
+    width:100vw;
+    margin:0;
+    height:15vh;
+    padding:0;
+    background-image: url("https://www.thebalance.com/thmb/UZS2curMfBJpwbb8LrvpxttXhA0=/2103x1428/filters:fill(auto,1)/Stock-Market-Charts-Are-Useless-56a093595f9b58eba4b1ae5b.jpg");
+    background-position: center;
+}
+nav{
+    display:flex;
+}
+header ul{
+    padding:0;
+    margin-left:10vw;
+    margin-top:6vh;
+}
+header ul li{
+    list-style: none;
+    margin:0 0 0 4vw;
+    padding:4px;
+    display:inline-block;
+}
+header ul li a{
+    text-decoration: none;
+    color: #509de6;
+    background-color:black;
+    padding:8px;
+    border:1px solid white;
+}
+
+
+body{
+    background-color: black;
+    text-align: center;
+    font-family: Helvetica;
+    height:100vh;
+    margin:0;
+}
+p{
+    color: #509de6;
+}
+#list {
+    margin:0 auto;
+    width: 300px;
+    background-color: white;
+    border: 3px solid #509de6;
+    padding: 15px;
+    color: blue;
+  }
+#Ticker{
+    font-family: Helvetica;
+}
+#content{
+    border: 3px solid #509de6;
+    background-color: whitesmoke;
+    color: black;
+    
+  }
+
+#hone{
+    color: #509de6;
+    font-family: Helvetica;
+}
+
+#sectors{
+    text-align: center;
+    background-color:white;
+    width:100vw;
+    height:10vh;
+    margin-top:5vh;
+}
+
+#sectors p{
+    color: #509de6;
+    font-size: 30px;
+    padding:3vh
+}
+
+#sector-list{
+    color:white;
+}
+
+#balanceS p{
+    padding:3vh 0vw;
+    color: #509de6;
+    font-size:20px;
+}
+#balanceS ul{
+    color:white;
+    background-color: #509de6;
+    list-style: none;
+    width:60vw;
+    margin-left:20vw;
+    padding:2vh 0vw;
+}
+
+#balanceS ul li{
+    margin-top:10vh;
+    margin-bottom:10vh;
+}
+
+.paragraph-title{
+    background-color:white;
+    padding:5vh 0vw;
+    margin-bottom:15vh;
+}
+
+.under{
+    margin-top:15vh;
+    background-color:white;
+}
+
+#financialstatements p{
+    font-size:20px;
+}
+
+#equation-img{
+    height:50vh;
+    margin-top:15vh;
+}

@@ -58,6 +58,12 @@ p{
   font-size: 20px;
   text-align: center;
 }
+#stockInfo{
+   font-family: "Times New Roman", Times, serif;
+   color: white;
+ 
+  margin: 2em;
+}
 .box {
   display: inline-block;
   display: flex;

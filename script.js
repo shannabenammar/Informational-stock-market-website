@@ -42,7 +42,8 @@ loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7A
           var dividendYield = data.results[0].dividendYield;
           var returnOnAverageAssets = data.results[0].returnOnAverageAssets;
           var shares = data.results[0].shares;
-          
+  
+         
   
           console.log(ticker);
           console.log(date);
@@ -51,10 +52,10 @@ loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7A
           console.log(dividendYield);
           console.log(returnOnAverageAssets);
   
-          
+ var div = document.createElement("div");          
   
     //document.body.style.backgroundColor = "blue";
-     document.body.innerHTML = "<h1>You Searched :" + inputName + " : </h1>" 
+      div.innerHTML =  "<div style='text-align:left' id= 'stockInfo'>" + "<h1>You Searched :" + inputName + " : </h1>" 
        + "<p> <li>Ticker: " + ticker + "</li>" 
        + "<li> date: " + date + "</li>"
        + "<li> report period: " + reportPeriod + "</li>"
@@ -62,8 +63,9 @@ loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7A
        + "<li> dividend yield " + dividendYield + "</li>"
        + "<li> return on average assets: " + returnOnAverageAssets + "</li>"
        + "<li> shares: " + shares + "</li>"
-       + "</p>" + "<br/>" + "<br/>" //"<img class= 'box2' src='https://cdn.lowgif.com/small/26edd87471bfb83d-animated-gif-transparent-background-5-gif-images-download.gif'/>"
+       + "</p>" + "<br/>" + "<br/>" + "</div>" //"<img class= 'box2' src='https://cdn.lowgif.com/small/26edd87471bfb83d-animated-gif-transparent-background-5-gif-images-download.gif'/>"
   
+  document.body.appendChild(div)
           },
          function(xhr) { console.error(xhr); }
 );

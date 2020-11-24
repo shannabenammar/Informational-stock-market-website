@@ -1,10 +1,12 @@
+var inputName;
 function onClick(data) {
   
   
-  var inputName = document.getElementById("textinput").value;
+  inputName = document.getElementById("textinput").value;
   var mytextbox = "my textbox element";
   var count = 0; 
   var keyPressed;
+  getPrintData(inputName);
   
 
 
@@ -28,6 +30,7 @@ function loadJSON(path, success, error){
     xhr.send();
 }
 
+function getPrintData(input){
 // Using this doc: https://polygon.io/docs/get_v2_reference_tickers_anchor
 
 loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY',
@@ -50,7 +53,7 @@ loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7A
   
           
   
-    // document.body.style.backgroundColor = "blue";
+    //document.body.style.backgroundColor = "blue";
      document.body.innerHTML = "<h1>You Searched :" + inputName + " : </h1>" 
        + "<p> <li>Ticker: " + ticker + "</li>" 
        + "<li> date: " + date + "</li>"
@@ -59,8 +62,9 @@ loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7A
        + "<li> dividend yield " + dividendYield + "</li>"
        + "<li> return on average assets: " + returnOnAverageAssets + "</li>"
        + "<li> shares: " + shares + "</li>"
-       + "</p>" + "<br/>" + "<br/>" + "<img class= 'box2' src='https://cdn.lowgif.com/small/26edd87471bfb83d-animated-gif-transparent-background-5-gif-images-download.gif'/>"
+       + "</p>" + "<br/>" + "<br/>" //"<img class= 'box2' src='https://cdn.lowgif.com/small/26edd87471bfb83d-animated-gif-transparent-background-5-gif-images-download.gif'/>"
   
           },
          function(xhr) { console.error(xhr); }
 );
+}

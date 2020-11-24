@@ -31,11 +31,16 @@ function loadJSON(path, success, error){
 }
 
 function getPrintData(input){
-// Using this doc: https://polygon.io/docs/get_v2_reference_tickers_anchor
+/ Using this doc: https://polygon.io/docs/get_v2_reference_tickers_anchor
   input.toUpperCase();
-  var url = "https://api.polygon.io/v2/reference/financials/" + input + "?limit=5&apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY";
+  
+  //URL with User specified stock name
+  var url = 'https://api.polygon.io/v2/reference/financials/' + input + '?limit=5&apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY';
 
-loadJSON(url,
+  //To use the url with the users specified url delete url in the loadJSON (below) and change to variable url
+  //Currently doesnt work so i changed it to the original url with APPL stock by default
+  
+loadJSON("https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY",
          function(data) { 
           var ticker = data.results[0].ticker;
           var date = data.results[0].calendarDate;

@@ -1,18 +1,11 @@
-function myKeyPress(e) {
+function onClick(data) {
   
-  /* TODO1: retrieve the value from the text input */
+  
   var inputName = document.getElementById("textinput").value;
   var mytextbox = "my textbox element";
-  var count = 0; // for 3
+  var count = 0; 
   var keyPressed;
   
-  if (window.event) {
-    // IE
-    keyPressed = e.keyCode;
-  } else if (e.which) {
-    // Netscape/Firefox/Opera
-    keyPressed = e.which;
-  }
 
 
 }
@@ -45,37 +38,27 @@ loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7A
           var assets = data.results[0].assets;
           var dividendYield = data.results[0].dividendYield;
           var returnOnAverageAssets = data.results[0].returnOnAverageAssets;
-          var tempMax = data.main.temp_max;
-          var tempMin = data.main.temp_min;
-          var humidty = data.main.humidity;
-          var pressure = data.main.pressure;
-          var windSpeed = data.wind.speed;
+          var shares = data.results[0].shares;
+          
   
-          console.log(data);
-          console.log(cityName);
-          console.log(weatherDes);
-          console.log(latCoord);
-          console.log(longCoord);
-          console.log(temp);
-          console.log(tempFeel);
-          console.log(tempMax);
-          console.log(tempMin);
-          console.log(humidty);
-          console.log(pressure);
-          console.log(windSpeed);
+          console.log(ticker);
+          console.log(date);
+          console.log(reportPeriod);
+          console.log(assets);
+          console.log(dividendYield);
+          console.log(returnOnAverageAssets);
   
-     document.body.style.backgroundColor = "blue";
-     document.body.innerHTML = "<h1>The weather for " + cityName + " : </h1>" 
-       + "<p> <li>Expected: " + weatherDes + "</li>" 
-       + "<li> Latitude coordinate: " + latCoord + "</li>"
-       + "<li> Longitude coordinate: " + longCoord + "</li>"
-       + "<li> Tempature: " + Math.floor((((temp-273.15)*1.4)+32)) + "</li>"
-       + "<li> Feels like: " + Math.floor((((tempFeel-273.15)*1.4)+32)) + "</li>"
-       + "<li> Max Tempature: " + Math.floor((((tempMax-273.15)*1.4)+32)) + "</li>"
-       + "<li> Min Tempature: " + Math.floor((((tempMin-273.15)*1.4)+32)) + "</li>"
-       + "<li> Humidity: " + humidty + "%</li>"
-       + "<li> Pressure: " + pressure + "</li>"
-       + "<li> Wind Speed: " + windSpeed + "</li>"
+          
+  
+    // document.body.style.backgroundColor = "blue";
+     document.body.innerHTML = "<h1>You Searched :" + inputName + " : </h1>" 
+       + "<p> <li>Ticker: " + ticker + "</li>" 
+       + "<li> date: " + date + "</li>"
+       + "<li> report period: " + reportPeriod + "</li>"
+       + "<li> assets: " + assets + "</li>"
+       + "<li> dividend yield " + dividendYield + "</li>"
+       + "<li> return on average assets: " + returnOnAverageAssets + "</li>"
+       + "<li> shares: " + shares + "</li>"
        + "</p>" + "<br/>" + "<br/>" + "<img class= 'box2' src='https://cdn.lowgif.com/small/26edd87471bfb83d-animated-gif-transparent-background-5-gif-images-download.gif'/>"
   
           },

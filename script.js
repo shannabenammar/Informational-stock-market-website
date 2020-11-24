@@ -1,8 +1,8 @@
-var inputName;
+//var inputName;
 function onClick(data) {
   
   
-  inputName = document.getElementById("textinput").value;
+  var inputName = document.getElementById("textinput").value;
   var mytextbox = "my textbox element";
   var count = 0; 
   var keyPressed;
@@ -32,8 +32,10 @@ function loadJSON(path, success, error){
 
 function getPrintData(input){
 // Using this doc: https://polygon.io/docs/get_v2_reference_tickers_anchor
+  input.toUpperCase();
+  var url = "https://api.polygon.io/v2/reference/financials/" + input + "?limit=5&apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY";
 
-loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY',
+loadJSON(url,
          function(data) { 
           var ticker = data.results[0].ticker;
           var date = data.results[0].calendarDate;
@@ -55,7 +57,7 @@ loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7A
  var div = document.createElement("div");          
   
     //document.body.style.backgroundColor = "blue";
-      div.innerHTML =  "<div style='text-align:left' id= 'stockInfo'>" + "<h1>You Searched :" + inputName + " : </h1>" 
+      div.innerHTML =  "<div style='text-align:left' id= 'stockInfo'>" + "<h1>You Searched :" + input + " : </h1>" 
        + "<p> <li>Ticker: " + ticker + "</li>" 
        + "<li> date: " + date + "</li>"
        + "<li> report period: " + reportPeriod + "</li>"

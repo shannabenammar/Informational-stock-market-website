@@ -35,15 +35,16 @@ function loadJSON(path, success, error){
     xhr.send();
 }
 
-// Using this doc
-loadJSON('https://api.polygon.io/v1/last/stocks/AAPL?apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY',
+// Using this doc: https://polygon.io/docs/get_v2_reference_tickers_anchor
+
+loadJSON('https://api.polygon.io/v2/reference/financials/AAPL?limit=5&apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY',
          function(data) { 
-          var cityName = data.name;
-          var weatherDes = data.weather[0].description;
-          var latCoord = data.coord.lat;
-          var longCoord = data.coord.lon;
-          var temp = data.main.temp;
-          var tempFeel = data.main.feels_like;
+          var ticker = data.results[0].ticker;
+          var date = data.results[0].calendarDate;
+          var reportPeriod = data.results[0].reportPeriod;
+          var assets = data.results[0].assets;
+          var dividendYield = data.results[0].dividendYield;
+          var returnOnAverageAssets = data.results[0].returnOnAverageAssets;
           var tempMax = data.main.temp_max;
           var tempMin = data.main.temp_min;
           var humidty = data.main.humidity;

@@ -1,129 +1,202 @@
-html{
-    height:100%;
-    width:100%;
-    margin:0;
-    padding:0;
+html {
+  height: 100%;
 }
-header{
-    font-size: 20px;
-    font-family: Helvetica;
-    border-bottom:2px solid  #509de6;
-    width:100vw;
-    margin:0;
-    height:15vh;
-    padding:0;
-    background-image: url("https://www.thebalance.com/thmb/UZS2curMfBJpwbb8LrvpxttXhA0=/2103x1428/filters:fill(auto,1)/Stock-Market-Charts-Are-Useless-56a093595f9b58eba4b1ae5b.jpg");
-    background-position: center;
+#navigate {
+  background-color: black;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  margin-bottom: 10px;
+  max-width: 100%;
+  border-bottom: 2px solid #6599FF;
 }
-nav{
-    display:flex;
+#navigate a {
+  float: left;
+  color: #6599FF;
+  text-align: center;
+  margin: auto;
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
+  font-family: "Helvetica";
 }
-header ul{
-    padding:0;
-    margin-left:10vw;
-    margin-top:6vh;
+#navigate a:hover {
+  background-color: black;
+  color: rgb(203, 13, 13);
 }
-header ul li{
-    list-style: none;
-    margin:0 0 0 4vw;
-    padding:4px;
-    display:inline-block;
+nav {
+  display: flex;
 }
-header ul li a{
-    text-decoration: none;
-    color: #509de6;
-    background-color:black;
-    padding:8px;
-    border:1px solid white;
+header ul {
+  padding: 0;
+  margin-left: 10vw;
+  margin-top: 6vh;
 }
-
-
-body{
-    background-color: black;
-    text-align: center;
-    font-family: Helvetica;
-    height:100vh;
-    margin:0;
+header ul li {
+  list-style: none;
+  margin: 0 0 0 4vw;
+  padding: 4px;
+  display: inline-block;
 }
-p{
-    color: #509de6;
+header ul li a {
+  text-decoration: none;
+  color: #509de6;
+  background-color: black;
+  padding: 8px;
+  border: 1px solid white;
+}
+body {
+  background-color: black;
+  text-align: center;
+  font-family: Helvetica;
+  margin: 0;
+  height: 100%;
+  background: url("https://cdn.glitch.com/704db374-f31e-4e6f-8d2d-9803ea702f0a%2Fhusk.png?v=1607650948593");
+  background-size: cover;
+  background-attachment: scroll;
+}
+p {
+  color: #509de6;
+}
+#textinput {
+  /*  TODO 2.*/
+  font-family: "Lucida Console", Courier, monospace;
+  /*  TODO 1.*/
+  border-bottom: 5px solid;
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+#stockInfo {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  margin: 2em;
+}
+.apireturn {
+  color: #6599FF;
+}
+.js {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 20%;
+  border-radius: 10px;
+  font-family: Helvetica;
+  color: black;
+}
+#jstitle {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 20%;
+  border-radius: 10px;
+  font-family: Helvetica;
+  color: #6599FF;
+  background: black;
+}
+.box {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 #list {
-    margin:0 auto;
-    width: 300px;
-    background-color: white;
-    border: 3px solid #509de6;
-    padding: 15px;
-    color: blue;
-  }
-#Ticker{
-    font-family: Helvetica;
+  margin: 0 auto;
+  width: 300px;
+  background-color: white;
+  border: 3px solid #509de6;
+  padding: 15px;
+  color: blue;
 }
-#content{
-    border: 3px solid #509de6;
-    background-color: whitesmoke;
-    color: black;
-    
-  }
-
-#hone{
-    color: #509de6;
-    font-family: Helvetica;
+#Ticker {
+  font-family: Helvetica;
+}
+#content {
+  border: 3px solid #509de6;
+  background-color: whitesmoke;
+  color: black;
 }
 
-#sectors{
-    text-align: center;
-    background-color:white;
-    width:100vw;
-    height:10vh;
-    margin-top:5vh;
+#hone {
+  color: #509de6;
+  font-family: Helvetica;
 }
 
-#sectors p{
-    color: #509de6;
-    font-size: 30px;
-    padding:3vh
+#sectors {
+  text-align: center;
+  background-color: white;
+  width: 100vw;
+  height: 10vh;
+  margin-top: 5vh;
 }
 
-#sector-list{
-    color:white;
+#sectors p {
+  color: #509de6;
+  font-size: 30px;
+  padding: 3vh;
 }
 
-#balanceS p{
-    padding:3vh 0vw;
-    color: #509de6;
-    font-size:20px;
-}
-#balanceS ul{
-    color:white;
-    background-color: #509de6;
-    list-style: none;
-    width:60vw;
-    margin-left:20vw;
-    padding:2vh 0vw;
+#sector-list {
+  color: white;
 }
 
-#balanceS ul li{
-    margin-top:10vh;
-    margin-bottom:10vh;
+#balanceS p {
+  padding: 3vh 0vw;
+  color: #509de6;
+  font-size: 20px;
+}
+#balanceS ul {
+  color: white;
+  font-size: 10px;
+  list-style: none;
+  width: 60vw;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2vh 0vw;
 }
 
-.paragraph-title{
-    background-color:white;
-    padding:5vh 0vw;
-    margin-bottom:15vh;
+#balanceS ul li {
+  margin-bottom: 1vh;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.under{
-    margin-top:15vh;
-    background-color:white;
+.paragraph-title {
+  margin-bottom: 2vh;
+  font-size: 30px;
+  font-weight: bold;
+  color: #509de6;
 }
 
-#financialstatements p{
-    font-size:20px;
+.contain {
+  border: 2px solid white;
+  border-radius: 10px;
+  max-width: 45%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  background: black;
 }
 
-#equation-img{
-    height:50vh;
-    margin-top:15vh;
+.contain p {
+  color: white;
+  font-size: 20px;
+}
+
+ul {
+  margin: auto;
+}
+
+.title {
+  font-size: 30px;
+  color: #509de6;
+}
+
+#equation-img {
+  height: 50vh;
 }

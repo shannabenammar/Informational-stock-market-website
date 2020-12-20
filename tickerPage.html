@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>Ticker Page</title>
+    <! Bootstrap CSS script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <! Beginning of navigation>
+    <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <span class="text-muted">
+            <ul>
+              <li style="margin: auto; text-align: center;">
+                <a href="index.html">Home</a>
+              </li>
+            </ul>
+          </span>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </div>
+    <! end of Navigation>
+  </head>
+
+  <body>
+    <h1></h1>
+    <h1 id="div" onload="onClick(div)"></h1>
+
+    <script>
+      document.getElementById("div").innerHTML = localStorage.getItem(
+        "textvalue"
+      );
+      var input = localStorage.getItem("textvalue");
+      getPrintData(input);
+
+      function loadJSON(path, success, error) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              if (success) success(JSON.parse(xhr.responseText));
+            } else {
+              if (error) error(xhr);
+            }
+          }
+        };
+        xhr.open("GET", path, true);
+        xhr.send();
+      }
+
+      function getPrintData(input) {
+        // Using this doc: https://polygon.io/docs/get_v2_reference_tickers_anchor
+        input.toUpperCase();
+        var api = "https://api.polygon.io/v2/reference/financials/";
+        var apiKey = "?limit=5&apiKey=e7AX6gnz3TFpOnM77kBd3kFiOH6EBqIY";
+        //URL with User specified stock name
+        var url = api + input + apiKey;
+
+        //To use the url with the users specified url delete url in the loadJSON (below) and change to variable url
+        //Currently doesnt work so i changed it to the original url with APPL stock by default
+
+        loadJSON(
+          url,
+          function(data) {
+            var ticker = data.results[0].ticker;
+            var date = data.results[0].calendarDate;
+            var reportPeriod = data.results[0].reportPeriod;
+            var assets = data.results[0].assets;
+            var dividendYield = data.results[0].dividendYield;
+            var returnOnAverageAssets = data.results[0].returnOnAverageAssets;
+            var shares = data.results[0].shares;
+
+            console.log(ticker);
+            console.log(date);
+            console.log(reportPeriod);
+            console.log(assets);
+            console.log(dividendYield);
+            console.log(returnOnAverageAssets);
+
+            var div = document.createElement("div");
+
+            //document.body.style.backgroundColor = "blue";
+            div.innerHTML =
+              "<div style='text-align: center; color: black; font-size: 25px' id= 'stockInfo'>" +
+              "<h1>You Searched: " +
+              input +
+              " </h1>" +
+              "<p> <li>Ticker: " +
+              ticker +
+              "</li>" +
+              "<li> date: " +
+              date +
+              "</li>" +
+              "<li> report period: " +
+              reportPeriod +
+              "</li>" +
+              "<li> assets: " +
+              assets +
+              "</li>" +
+              "<li> dividend yield " +
+              dividendYield +
+              "</li>" +
+              "<li> return on average assets: " +
+              returnOnAverageAssets +
+              "</li>" +
+              "<li> shares: " +
+              shares +
+              "</li>" +
+              "</p>" +
+              "<br/>" +
+              "<br/>" +
+              "</div>"; //"<img class= 'box2' src='https://cdn.lowgif.com/small/26edd87471bfb83d-animated-gif-transparent-background-5-gif-images-download.gif'/>"
+
+            document.body.appendChild(div);
+          },
+          function(xhr) {
+            console.error(xhr);
+          }
+        );
+      }
+    </script>
+
+    <! Scripts for bootstrap tools>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

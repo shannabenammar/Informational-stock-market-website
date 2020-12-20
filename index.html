@@ -65,12 +65,24 @@
       </nav>
     </div>
     <! end of Navigation>
+    
+    <! Beginning of pass value script >
+    
+    <script>
+      function passvalues(){
+        var ticker = document.getElementById("textinput").value;
+        localStorage.setItem("textvalue", ticker);
+        return false;
+      }
+    </script>
+    
   </head>
 
   <body>
     <! Search Bar>
     <br />
     <div class="searchBar" style="text-align: center; margin: auto;">
+      
       <input
         type="text"
         id="textinput"
@@ -78,11 +90,11 @@
         placeholder="Enter stock name"
       />
       <a
-        href="#"
+        href="tickerPage.html"
         class="btn btn-primary btn-lg active"
         role="button"
         aria-pressed="true"
-        onclick="onClick(this)"
+        onclick="passvalues();"
         >Search</a
       >
     </div>
